@@ -17,6 +17,7 @@ For more info on Serverless Architecture, please see [ServerLess](https://server
 
 ## Stack
 
+- [TypeScript](https://www.typescriptlang.org/)
 - [DynamoDB](https://aws.amazon.com/dynamodb/)
 - [Lambda](https://aws.amazon.com/lambda/)
 - [Serverless](https://serverless.com/)

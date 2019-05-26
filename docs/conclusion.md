@@ -1,4 +1,4 @@
-Even given time limit, 
+Given its small scale and time limit, I've over complicated the project, especially in the setup part. 
 
 # AWS Lambda 
 
