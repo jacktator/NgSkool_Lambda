@@ -30,7 +30,7 @@ app.get('/', (_, res) => {
 app.post('/schools', schoolsAPI.create);
 app.post('/schools/:id', schoolsAPI.update);
 app.get('/schools', schoolsAPI.list);
-// app.get('/schools/:id', schoolsAPI.get);
+app.get('/schools/:id', schoolsAPI.get);
 
 // Get User endpoint
 // app.get('/schools/:userId', function (req, res) {

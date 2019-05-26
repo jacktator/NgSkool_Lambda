@@ -201,29 +201,29 @@ export const list = (_, res) => {
  * @author Jacktator
  * @since 1.0.0
  */
-// export const get = (req, res) => {
-//
-//     const id = req.params.id;
-//
-//     if (id == undefined) {
-//         res.status(400).json({ error: 'Missing Argument: "id" is required query parameter.' })
-//     }
-//
-//     const params = {
-//         TableName: SCHOOLS_TABLE,
-//         Key: {
-//             id: id,
-//         },
-//     };
-//
-//     // fetch all todos from the database
-//     dynamoDB.get(params).promise()
-//         .then((result) => {
-//             // School successfully listed
-//             res.status(200).json(result.Item);
-//         })
-//         .catch((err) => {
-//             // School failed to list
-//             res.status(400).json({ error: 'Failed to Get Schools. ' + err });
-//         });
-// };
+export const get = (req, res) => {
+
+    const id = req.params.id;
+
+    if (id == undefined) {
+        res.status(400).json({ error: 'Missing Argument: "id" is required query parameter.' })
+    }
+
+    const params = {
+        TableName: SCHOOLS_TABLE,
+        Key: {
+            id: id,
+        },
+    };
+
+    // fetch all todos from the database
+    dynamoDB.get(params).promise()
+        .then((result) => {
+            // School successfully listed
+            res.status(200).json(result.Item);
+        })
+        .catch((err) => {
+            // School failed to list
+            res.status(400).json({ error: 'Failed to Get Schools. ' + err });
+        });
+};
