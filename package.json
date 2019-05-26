@@ -7,11 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "aws-sdk": "^2.463.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
     "express": "^4.17.0",
     "serverless-http": "^2.0.2",
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {
+    "@aws/dynamodb-data-mapper": "^0.7.3",
+    "@aws/dynamodb-data-mapper-annotations": "^0.7.3",
     "@types/aws-lambda": "^8.10.17",
     "@types/node": "^10.12.18",
     "serverless-webpack": "^5.2.0",

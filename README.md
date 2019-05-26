@@ -36,9 +36,13 @@ For more info on Serverless Architecture, please see [ServerLess](https://server
 
 ### AWS DynamoDB
 
+Though AWS documents suggest that attributes to be named in Pascal Case, from experience JS applications reads better when columns are camelCase.
+
 [x] Create Table
     [x] School
 [ ] Fine tune IAM Permission for Tables
+
+To safe guard column/attribute/key name for NoSQL, I'm using an SDK `dynamodb-data-mapper` to shield the REST APIs.
 
 ### Amazon API Gateway
 
@@ -50,6 +54,14 @@ For more info on Serverless Architecture, please see [ServerLess](https://server
 [ ] Keywords
 [ ] Postman API
 [ ] Postman Collection (Depending on Time)
+
+## Testing
+
+## Deployment
+
+> serverless deploy
+
+Docs: [AWS Serverless Express Architecture](https://serverless.com/blog/serverless-express-rest-api/).
 
 ## Issues
 

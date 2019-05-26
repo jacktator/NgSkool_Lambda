@@ -5,12 +5,29 @@ service:
 plugins:
   - serverless-webpack
 
+custom:
+  tableName: 'NgSkool_Schools-${self:provider.stage}'
+
 provider:
   name: aws
   stage: dev # Set the default stage used. Default is dev
   region: ap-southeast-2 # AWS Sydney Region
   runtime: nodejs10.x
   timeout: 30 # The default is 6 seconds. Note: API Gateway current maximum is 30 seconds
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - { "Fn::GetAtt": ["SchoolsDynamoDBTable", "Arn" ] }
+  environment:
+    AWS_REGION: ${self:provider.region}
+    SCHOOLS_TABLE: ${self:custom.tableName}
 
 functions:
   app:
@@ -24,3 +41,21 @@ functions:
       - http:
           method: get
           path: hello
+
+resources:
+  Resources:
+    SchoolsDynamoDBTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: Id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: Id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+        TableName: ${self:custom.tableName}
