@@ -2,8 +2,8 @@ const aws = require('aws-sdk');
 const AWS_APP_REGION = process.env.AWS_APP_REGION;
 
 aws.config.update({
-  accessKeyId: "AKIAZTLQRQW2HMDAMEM5",
-  secretAccessKey: "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",
+  accessKeyId: "keyId",
+  secretAccessKey: "accessKey",
   region: AWS_APP_REGION,
   endpoint: "lambda.ap-southeast-2.amazonaws.com"
 });
@@ -22,7 +22,10 @@ if (process.env.IS_OFFLINE) {
   });
   // console.log(dynamoDB);
 } else {
-  dynamoDB = new aws.DynamoDB.DocumentClient();
+  dynamoDB = new aws.DynamoDB.DocumentClient({
+    region: AWS_APP_REGION,
+    endpoint: "lambda.ap-southeast-2.amazonaws.com"
+  });
 }
 
 export default dynamoDB;
