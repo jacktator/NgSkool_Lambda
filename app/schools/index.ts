@@ -21,11 +21,11 @@ if (IS_OFFLINE === 'true') {
     DynamoDB = new aws.DynamoDB.DocumentClient();
 }
 
-const AWS_REGION = process.env.AWS_REGION;
+const AWS_APP_REGION = process.env.AWS_APP_REGION;
 // const SCHOOLS_TABLE = process.env.SCHOOLS_TABLE; // No longer in use
 
 const mapper = new DataMapper({
-    client: new DynamoDB({region: AWS_REGION}) // the SDK client used to execute operations
+    client: new DynamoDB({region: AWS_APP_REGION}) // the SDK client used to execute operations
 });
 
 /**

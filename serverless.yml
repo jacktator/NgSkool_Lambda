@@ -32,7 +32,7 @@ provider:
       Resource:
         - { "Fn::GetAtt": ["SchoolsDynamoDBTable", "Arn" ] }
   environment:
-    AWS_REGION: ${self:provider.region}
+    AWS_APP_REGION: ${self:provider.region}
     SCHOOLS_TABLE: ${self:custom.tableName}
 
 functions:
