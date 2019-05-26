@@ -10,7 +10,7 @@ plugins:
 
 custom:
   tableName: 'NgSkool_Schools-${self:provider.stage}'
-  queryLimit: 100
+  queryLimit: 50
   dynamodb:
     start:
       migrate: true

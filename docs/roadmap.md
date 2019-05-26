@@ -3,6 +3,10 @@
 - [x] Serverless
 - [x] Offline Development
 
+## Authentication 
+
+- [ ] JWT Auth (Depending on Time)
+
 ## AWS Cognito
 
 - [x] Create User Pool - NgSkoolUsers created.

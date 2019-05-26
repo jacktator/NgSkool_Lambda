@@ -31,3 +31,4 @@ While the API routing feature deliberately handled by Express instead of Lambda 
 - [Testing](./docs/testing.md)
 - [Deployment](./docs/deployment.md)
 - [Issues](./docs/issues.md)
+- [Conclusion](./docs/conclusion.md)

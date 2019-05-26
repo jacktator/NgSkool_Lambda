@@ -1,0 +1,42 @@
+Even given time limit, 
+
+# AWS Lambda 
+
+It's a lot like the [Cloud Function](https://docs.leancloud.app/leanengine_cloudfunction_guide-node.html) feature by [Parse](Parse.com) and [LeanCloud](LeanCloud.cn), on **STEROIDS**! 
+
+Liked it.
+
+# AWS DynamoDB
+
+While is'a pain in the back to setup, it has its values
+
+- Fine tuning permisison via IAM 
+- Fast indexing
+- Query and nested query
+- Good for scalable projects
+
+Did not hate it.
+
+# Serverless
+
+Even though it took a while to setup, it's a great structure. 
+
+- Enables local development
+- Enables easy deployment
+- Maintains independence to AWS stack, reduces risk.
+
+Loved it.
+
+# What went wrong / took too much time
+
+- Serverless Local dev setup debugging
+- DynamoDB and structuring
+- Wrapping my head around making Serverless/Express work together with Lambda  
+
+# What would I have done differently?
+
+**Given time limit**, I should have used MEAN stack, since I'm more familiar with it.
+
+- Use MongoDB for Ultra-Fast Quick Start
+- Use a MEAN Full Stack Yoeman/Starterkit
+- Deploy to Heroku, or DigitalOcean Apps
