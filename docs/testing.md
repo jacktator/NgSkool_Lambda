@@ -8,18 +8,20 @@ TODO.
 
 REST API is the contract between FrontEnd and BackEnd. I'm using Postman to test REST API endpoints. 
 
+Collection [can be found here](https://www.getpostman.com/collections/b218fe95e1c9b78884bd), Environment [can be found here](./testing/NgSkool_Local.postman_environment.json).
+
 ## Postman Requests
 
-![](./postman-create-result.png)
-![](./postman-update-result.png)
+![](./testing/postman-create-result.png)
+![](./testing/postman-update-result.png)
 
 ## Postman Collection
 
-![](./postman-collection.png)
+![](./testing/postman-collection.png)
 
 ## Postman Test Scripts
-![](./postman-create-test.png)
-![](./postman-update-test.png)
+![](./testing/postman-create-test.png)
+![](./testing/postman-update-test.png)
 
 ## Postman Collection runs
 
