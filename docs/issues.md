@@ -1,0 +1,3 @@
+- [ ] Update event might override 'createdAt' attribute.
+- [ ] Delete duplicate application created in [AWS N. Virginia](https://console.aws.amazon.com/lambda/home?region=us-east-1#/applications)
+- [ ] Get operation not functional: `ValidationException: The number of conditions on the keys is invalid`

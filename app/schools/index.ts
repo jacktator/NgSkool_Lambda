@@ -6,6 +6,7 @@ import * as uuid from 'uuid'
 import dynamoDB from "../dynamodb";
 
 const SCHOOLS_TABLE = process.env.SCHOOLS_TABLE;
+const QUERY_LIMIT = process.env.QUERY_LIMIT;
 
 /**
  * The following mapper could better wrap json data in to Data Model.
@@ -83,11 +84,11 @@ export const create = (req, res) => {
     //     });
 
     dynamoDB.put(params).promise()
-        .then(function() {
+        .then(() => {
             // School successfully created
             res.status(200).json(params.Item);
         })
-        .catch(function(err) {
+        .catch((err) => {
             // School failed to save
             res.status(400).json({ error: 'Failed to Create School. ' + err });
         });
@@ -155,63 +156,74 @@ export const update = (req, res) => {
     //     });
 
     dynamoDB.put(params).promise()
-        .then(function() {
+        .then(() => {
             // School successfully created
             res.status(200).json(params.Item);
         })
-        .catch(function(err) {
+        .catch((err) => {
             // School failed to save
             res.status(400).json({ error: 'Failed to Update School. ' + err });
         });
 };
 
+/**
+ * This function handles list School
+ *
+ * @todo Move list function into dedicated create.ts file
+ *
+ * @author Jacktator
+ * @since 1.0.0
+ */
+export const list = (_, res) => {
 
+    const params = {
+        TableName: SCHOOLS_TABLE,
+        Limit: QUERY_LIMIT
+    };
 
+    // fetch all todos from the database
+    dynamoDB.scan(params).promise()
+        .then((result) => {
+            // School successfully listed
+            res.status(200).json(result.Items);
+        })
+        .catch((err) => {
+            // School failed to list
+            res.status(400).json({ error: 'Failed to List Schools. ' + err });
+        });
+};
 
-// export const list = (req, res) => {
-
-    // TODO: String Query
-    // const { name, address, numberOfStudents } = req.body;
-    //
-    // if (typeof name != 'string') {
-    //     res.status(400).json({ error: 'Type Error: "name" must be a string.' });
-    // } else if (typeof address != 'string') {
-    //     res.status(400).json({ error: 'Type Error: "address" must be a string.' });
-    // } else if (typeof numberOfStudents != 'number') {
-    //     res.status(400).json({ error: 'Type Error: "numberOfStudents" must be a number.' });
-    // }
-
-    // var params = {
-    //     RequestItems: { // map of TableName to list of Key to get from each table
-    //         table_name_1: {
-    //             Keys: [ // a list of primary key value maps
-    //                 {
-    //                     key_attribute_name: attribute_value, //(string | number | boolean | null | Binary)
-    //                     // ... more key attributes, if the primary key is hash/range
-    //                 },
-    //                 // ... more keys to get from this table ...
-    //             ],
-    //             AttributesToGet: [ // option (attributes to retrieve from this table)
-    //                 'attribute_name',
-    //                 // ... more attribute names ...
-    //             ],
-    //             ConsistentRead: false, // optional (true | false)
-    //         },
-    //         // ... more tables and keys ...
-    //     },
-    //     ReturnConsumedCapacity: 'NONE', // optional (NONE | TOTAL | INDEXES)
-    // };
-    //
-    // dynamoDB.batchGet(params, function(error, list) {
-    //     if (error) {
-    //         // School failed to save
-    //         console.log(error);
-    //         res.status(400).json({ error: 'Failed to List Schools. ' + error });
-    //     } else {
-    //         // School successfully created
-    //         res.status(200).json(savedSchool);
-    //     }
-    // });
+/**
+ * This function handles get Schools
+ *
+ * @todo Move get function into dedicated update.ts file
+ *
+ * @author Jacktator
+ * @since 1.0.0
+ */
+// export const get = (req, res) => {
+//
+//     const id = req.params.id;
+//
+//     if (id == undefined) {
+//         res.status(400).json({ error: 'Missing Argument: "id" is required query parameter.' })
+//     }
+//
+//     const params = {
+//         TableName: SCHOOLS_TABLE,
+//         Key: {
+//             id: id,
+//         },
+//     };
+//
+//     // fetch all todos from the database
+//     dynamoDB.get(params).promise()
+//         .then((result) => {
+//             // School successfully listed
+//             res.status(200).json(result.Item);
+//         })
+//         .catch((err) => {
+//             // School failed to list
+//             res.status(400).json({ error: 'Failed to Get Schools. ' + err });
+//         });
 // };
-
-// module.exports.createSchool = createSchool;

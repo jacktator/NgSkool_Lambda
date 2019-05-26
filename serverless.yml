@@ -10,6 +10,7 @@ plugins:
 
 custom:
   tableName: 'NgSkool_Schools-${self:provider.stage}'
+  queryLimit: 100
   dynamodb:
     start:
       migrate: true
@@ -34,6 +35,7 @@ provider:
   environment:
     AWS_APP_REGION: ${self:provider.region}
     SCHOOLS_TABLE: ${self:custom.tableName}
+    QUERY_LIMIT: ${self:custom.queryLimit}
 
 functions:
   app:
@@ -51,6 +53,17 @@ functions:
     handler: index.app
     events:
       - http: 'POST /schools/{proxy+}'
+
+  listSchool:
+    handler: index.app
+    events:
+      - http: 'GET /schools'
+
+#  getSchool:
+#    handler: index.app
+#    events:
+#      - http: 'GET /schools/{proxy+}'
+
 #  hello:
 #    handler: hello.hello
 #    events:
