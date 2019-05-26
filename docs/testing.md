@@ -2,6 +2,10 @@
 
 ## Unit Test
 
+Unit Test should be added for each database operation functions. 
+
+TODO. 
+
 ## REST API Test
 
 REST API is the contract between FrontEnd and BackEnd. I'm using Postman to test REST API endpoints. 
@@ -21,4 +25,10 @@ REST API is the contract between FrontEnd and BackEnd. I'm using Postman to test
 
 #### Postman Collection runs
 
+TODO. [Collection Runs Docs](https://learning.getpostman.com/docs/postman/collection_runs/intro_to_collection_runs/). 
+
 ## Automation
+
+Use webpack to automate testing
+
+Todo. 
