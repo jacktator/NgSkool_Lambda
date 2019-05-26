@@ -2,7 +2,24 @@ import { SKSchool as School } from "../models/school";
 import { DataMapper } from '@aws/dynamodb-data-mapper';
 
 const aws = require('aws-sdk');
-const DynamoDB = new aws.DynamoDB.DocumentClient();
+
+/**
+ * Enabling Offline Development
+ *
+ * @author Jacktator
+ * @since 1.0.0
+ */
+const IS_OFFLINE = process.env.IS_OFFLINE;
+let DynamoDB;
+if (IS_OFFLINE === 'true') {
+    DynamoDB = new aws.DynamoDB.DocumentClient({
+        region: 'localhost',
+        endpoint: 'http://localhost:8000'
+    });
+    console.log(DynamoDB);
+} else {
+    DynamoDB = new aws.DynamoDB.DocumentClient();
+}
 
 const AWS_REGION = process.env.AWS_REGION;
 // const SCHOOLS_TABLE = process.env.SCHOOLS_TABLE; // No longer in use
