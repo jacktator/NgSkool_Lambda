@@ -27,7 +27,8 @@ app.get('/', (_, res) => {
 });
 
 // Create School endpoint
-app.post('/schools', schoolsAPI.createSchool);
+app.post('/schools', schoolsAPI.create);
+app.post('/schools/:id', schoolsAPI.update);
 
 // Get User endpoint
 // app.get('/schools/:userId', function (req, res) {

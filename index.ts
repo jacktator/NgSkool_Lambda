@@ -7,5 +7,4 @@
 const serverless = require('serverless-http');
 const expApp = require('./app');
 
-module.exports.handler = serverless(expApp);
-
+module.exports.app = serverless(expApp);

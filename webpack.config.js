@@ -9,7 +9,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
   },
   output: {
-    libraryTarget: 'commonjs',
+    libraryTarget: 'commonjs2',
     path: path.join(__dirname, '.webpack'),
     filename: '[name].js'
   },

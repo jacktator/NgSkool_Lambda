@@ -37,18 +37,20 @@ provider:
 
 functions:
   app:
-    handler: index.handler
+    handler: index.app
     events:
       - http: ANY /
       - http: 'ANY {proxy+}'
+
   createSchool:
-    handler: index.handler
+    handler: index.app
     events:
       - http: 'POST /schools'
-#  getUser:
-#    handler: index.handler
-#    events:
-#      - http: 'GET /users/{proxy+}'
+
+  updateSchool:
+    handler: index.app
+    events:
+      - http: 'POST /schools/{proxy+}'
 #  hello:
 #    handler: hello.hello
 #    events:
@@ -62,12 +64,10 @@ resources:
       Type: 'AWS::DynamoDB::Table'
       Properties:
         AttributeDefinitions:
-          -
-            AttributeName: Id
+          - AttributeName: id
             AttributeType: S
         KeySchema:
-          -
-            AttributeName: Id
+          - AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 5

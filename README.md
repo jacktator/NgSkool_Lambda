@@ -27,35 +27,53 @@ For more info on Serverless Architecture, please see [ServerLess](https://server
 
 ### Local Dev Environment
 
-[x] Serverless
+- [x] Serverless
 
 ### AWS Cognito
 
-[x] Create User Pool - NgSkoolUsers created.
-[x] Create App Client - NgSkoolWebApp created. App ID: 2i4tpsipubcfl5g378m4jh0n50
+- [x] Create User Pool - NgSkoolUsers created.
+- [x] Create App Client - NgSkoolWebApp created. App ID: 2i4tpsipubcfl5g378m4jh0n50
 
 ### AWS DynamoDB
 
 Though AWS documents suggest that attributes to be named in Pascal Case, from experience JS applications reads better when columns are camelCase.
 
-[x] Create Table
-    [x] School
-[ ] Fine tune IAM Permission for Tables
+- [x] Create Table
+  - [x] School
+- [ ] Fine tune IAM Permission for Tables
 
 To safe guard column/attribute/key name for NoSQL, I'm using an SDK `dynamodb-data-mapper` to shield the REST APIs.
 
+### REST APIs
+
+- [x] POST /schools
+- [x] POST /schools/:id
+- [ ] GET /schools
+- [ ] GET /schools/:id
+- [ ] DEL /schools/:id
+
 ### Amazon API Gateway
 
-[ ] Create, Read, Update, Delete Schools
-[ ] Name
-[ ] Address
-[ ] Amount of Students
-[ ] Administrators
-[ ] Keywords
-[ ] Postman API
-[ ] Postman Collection (Depending on Time)
+- [ ] Create, Read, Update, Delete Schools
+- [ ] Name
+- [ ] Address
+- [ ] Amount of Students
+- [ ] Administrators
+- [ ] Keywords (Depending on Time)
 
 ## Testing
+
+### Unit Test
+
+### REST API Test
+
+- [x] Postman Requests
+- [x] Postman Collection
+- [x] Postman Test Scripts
+- [ ] Postman Collection Runs (Depending on Time)
+
+### Automation
+
 
 ## Deployment
 
@@ -65,4 +83,4 @@ Docs: [AWS Serverless Express Architecture](https://serverless.com/blog/serverle
 
 ## Issues
 
-[ ] Delete duplicate application created in [AWS N. Virginia](https://console.aws.amazon.com/lambda/home?region=us-east-1#/applications)
+- [ ] Delete duplicate application created in [AWS N. Virginia](https://console.aws.amazon.com/lambda/home?region=us-east-1#/applications)
