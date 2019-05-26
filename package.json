@@ -7,6 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "express": "^4.17.0",
+    "serverless-http": "^2.0.2",
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {
@@ -17,6 +19,16 @@
     "typescript": "^3.2.4",
     "webpack": "^4.29.0"
   },
-  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "aws": {
+    "cognito": {
+      "userPoolId": "ap-southeast-2_LlOeEJrPw",
+      "userPoolClientId": "2i4tpsipubcfl5g378m4jh0n50",
+      "region": "ap-southeast-2"
+    },
+    "api": {
+      "invokeUrl": ""
+    }
+  },
+  "author": "Jacktator (https://github.com/jacktator)",
   "license": "MIT"
 }

@@ -9,6 +9,7 @@ For more info, please see the [Introduction](https://github.com/jacktator/NgSkoo
 This repo follows the DynamoDB, Lambda, Serverless, Express and NodeJS architecture. For more information, please see [this guide](https://serverless.com/blog/serverless-express-rest-api/).
 
 For more info on AWS DynamoDB & Lambda Stack, please see [AWS Tutorial](https://aws.amazon.com/getting-started/projects/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/).
+Considering majority of NgSkool users will be in Australia. AWS ap-southeast-2 node, aka the Sydney Region is selected.
 
 For more info on Serverless Architecture, please see [ServerLess](https://serverless.com).
 
@@ -16,20 +17,30 @@ For more info on Serverless Architecture, please see [ServerLess](https://server
 
 ## Features
 
+- DynamoDB
+- Lambda
+- Express
+- NodeJS
+- Offline Development (Depending on time)
+
 ## Roadmap
 
-### Amazon Cognito
+### Local Dev Environment
+
+[x] Serverless
+
+### AWS Cognito
 
 [x] Create User Pool - NgSkoolUsers created.
-[x] Create App Client - NgSkoolWebApp created.
+[x] Create App Client - NgSkoolWebApp created. App ID: 2i4tpsipubcfl5g378m4jh0n50
 
-### Amazon DynamoDB
+### AWS DynamoDB
 
+[x] Create Table - arn:aws:dynamodb:ap-southeast-2:660050380212:table/Schools
 [x] School
 
 ### Amazon API Gateway
 
-[ ]
 [ ] Create, Read, Update, Delete Schools
 [ ] Name
 [ ] Address
@@ -38,3 +49,7 @@ For more info on Serverless Architecture, please see [ServerLess](https://server
 [ ] Keywords
 [ ] Postman API
 [ ] Postman Collection (Depending on Time)
+
+## Issues
+
+[ ] Delete duplicate application created in [AWS N. Virginia](https://console.aws.amazon.com/lambda/home?region=us-east-1#/applications)
