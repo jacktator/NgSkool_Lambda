@@ -36,8 +36,9 @@ For more info on Serverless Architecture, please see [ServerLess](https://server
 
 ### AWS DynamoDB
 
-[x] Create Table - arn:aws:dynamodb:ap-southeast-2:660050380212:table/Schools
-[x] School
+[x] Create Table
+    [x] School
+[ ] Fine tune IAM Permission for Tables
 
 ### Amazon API Gateway
 
