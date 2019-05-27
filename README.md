@@ -26,10 +26,25 @@ For more info on Serverless Architecture, please see [ServerLess](https://server
 
 While the API routing feature deliberately handled by Express instead of Lambda or Gateway API to reserve **application independence** from AWS Lambda. This is done in case I wish to use DyanmoDB only, and move the application hosting else where.  
 
-# TOC
+## TOC
 
 - [Roadmap](./docs/roadmap.md)
 - [Testing](./docs/testing.md)
 - [Deployment](./docs/deployment.md)
 - [Issues](./docs/issues.md)
 - [Conclusion](./docs/conclusion.md)
+
+## Assignment Delivery
+
+Please follow the following installation instructions.
+
+1. Install packages.
+
+> npm install
+
+2. Start a offline server.
+
+> sls offline start 
+
+3. Open http://localhost:3000/
+If you see 'hello world!', the backend is running.

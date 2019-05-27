@@ -1,5 +1,15 @@
 Given its small scale and time limit, I've over complicated the project, especially in the setup part. 
 
+# Features
+
+- TypeScript, promise
+- REST API Endpoints
+- REST API Tests with Postman
+- ExpressJS app connected to Lambda
+- Webpack and livereload
+- Middleware
+- Offline development
+
 # AWS Lambda 
 
 It's a lot like the [Cloud Function](https://docs.leancloud.app/leanengine_cloudfunction_guide-node.html) feature by [Parse](Parse.com) and [LeanCloud](LeanCloud.cn), on **STEROIDS**! 
@@ -31,7 +41,12 @@ Loved it.
 
 - Serverless Local dev setup debugging
 - DynamoDB and structuring
-- Wrapping my head around making Serverless/Express work together with Lambda  
+- Wrapping my head around making Serverless/Express work together with Lambda
+
+# Todos
+
+Due to time constraint, many features are left as 'idea'. 
+A `todo` had been added to comments.     
 
 # What would I have done differently?
 

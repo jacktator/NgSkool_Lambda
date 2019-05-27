@@ -36,20 +36,27 @@ export const create = (req, res) => {
 
     const timestamp = new Date().getTime();
 
-    const { name, address, numberOfStudents } = req.body;
+    const { name, state, address, numberOfStudents } = req.body;
 
     if (typeof name != 'string') {
         res.status(400).json({ error: 'Type Error: "name" must be a string.' });
+        return;
     } else if (typeof address != 'string') {
         res.status(400).json({ error: 'Type Error: "address" must be a string.' });
-    } else if (typeof numberOfStudents != 'number') {
+        return;
+    } else if (typeof state != 'string') {
+        res.status(400).json({ error: 'Type Error: "state" must be a string.' });
+        return;
+    } else if (isNaN(Number(numberOfStudents))) {
         res.status(400).json({ error: 'Type Error: "numberOfStudents" must be a number.' });
+        return;
     }
 
     const newSchoolData = {
         id: uuid.v1(),
         name: name,
         address: address,
+        state: state,
         numberOfStudents: numberOfStudents,
         checked: false,
         createdAt: timestamp,
@@ -111,12 +118,16 @@ export const update = (req, res) => {
 
     if (typeof name != 'string') {
         res.status(400).json({ error: 'Type Error: "name" must be a string.' });
+        return;
     } else if (typeof address != 'string') {
         res.status(400).json({ error: 'Type Error: "address" must be a string.' });
+        return;
     } else if (typeof numberOfStudents != 'number') {
         res.status(400).json({ error: 'Type Error: "numberOfStudents" must be a number.' });
+        return;
     } if (id == undefined) {
         res.status(400).json({ error: 'Missing Argument: "id" is required query parameter.' })
+        return;
     }
 
     const newSchoolData = {
@@ -169,7 +180,7 @@ export const update = (req, res) => {
 /**
  * This function handles list School
  *
- * @todo Move list function into dedicated create.ts file
+ * @todo Move list function into dedicated list.ts file
  *
  * @author Jacktator
  * @since 1.0.0
@@ -207,6 +218,7 @@ export const get = (req, res) => {
 
     if (id == undefined) {
         res.status(400).json({ error: 'Missing Argument: "id" is required query parameter.' })
+        return;
     }
 
     const params = {
