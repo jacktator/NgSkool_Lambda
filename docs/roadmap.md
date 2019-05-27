@@ -51,9 +51,9 @@ To safe guard column/attribute/key name for NoSQL, I'm using an SDK `dynamodb-da
 
 ### REST API Test
 
-- [x] [Postman Requests](./testing#postman-requrests)
-- [x] [Postman Collection](./testing/#postman-collection)
-- [x] [Postman Test Scripts](./testing/postman-test-scripts)
+- [x] [Postman Requests](./testing.md#postman-requrests)
+- [x] [Postman Collection](./testing.md#postman-collection)
+- [x] [Postman Test Scripts](./testing.md#postman-test-scripts)
 - [ ] Postman Collection Runs (Depending on Time)
 
 ### Automation
