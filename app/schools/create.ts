@@ -32,12 +32,14 @@ export default function create(req, res) {
 
     const timestamp = new Date().getTime();
 
-    const { name, address, numberOfStudents } = req.body;
+    const { name, address, numberOfStudents, state } = req.body;
 
     if (typeof name != 'string') {
         res.status(400).json({ error: 'Type Error: "name" must be a string.' });
     } else if (typeof address != 'string') {
         res.status(400).json({ error: 'Type Error: "address" must be a string.' });
+    } else if (typeof state != 'string') {
+        res.status(400).json({ error: 'Type Error: "state" must be a string.' });
     } else if (typeof numberOfStudents != 'number') {
         res.status(400).json({ error: 'Type Error: "numberOfStudents" must be a number.' });
     }
@@ -46,6 +48,7 @@ export default function create(req, res) {
         id: uuid.v1(),
         name: name,
         address: address,
+        state: state,
         numberOfStudents: numberOfStudents,
         checked: false,
         createdAt: timestamp,
