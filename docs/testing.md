@@ -2,7 +2,13 @@
 
 Unit Test should be added for each database operation functions. 
 
-TODO. 
+TODO
+
+# REST API Docs
+
+Generate REST API docs using Swagger
+
+TODO 
 
 # REST API Test
 
